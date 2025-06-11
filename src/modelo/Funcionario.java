@@ -6,7 +6,12 @@ public class Funcionario extends Usuario{
     private String dataContratacao;
     private String departamento;
     
-    public String getCargo(){
+    
+    public Funcionario(String nomeUsuario, String senha, String email, String endereco, Livro livroReservado, String cpf) {
+        super(nomeUsuario, senha, email, endereco, livroReservado, cpf);
+    }
+
+	public String getCargo(){
         return cargo;
     }
     

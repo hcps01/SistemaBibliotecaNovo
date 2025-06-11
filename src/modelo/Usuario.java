@@ -1,6 +1,7 @@
 package modelo;
 
 public class Usuario{
+	
     private String nome;
     private String nomeUsuario;
     private String senha;
@@ -10,8 +11,13 @@ public class Usuario{
     private String cpf;
 
     
-    public Usuario(){
-        
+    public Usuario(String nomeUsuario, String senha, String email, String endereco, Livro livroReservado, String cpf){
+            this.nomeUsuario = nomeUsuario;
+            this.senha = senha;
+            this.email = email;
+            this.endereco = endereco;
+            this.livroReservado = livroReservado;
+            this.cpf = cpf;
     }
     
     public String getNome(){

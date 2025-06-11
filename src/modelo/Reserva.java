@@ -4,36 +4,34 @@ import java.time.LocalDate;
 
 public class Reserva {
 	
+    private Usuario usuarioDaVez;
 	private Livro livroReservado;
     private LocalDate dataAtual;
-    private LocalDate dataDevolucao;
     private LocalDate dataReservaInicio;
     private LocalDate dataReservaFim;
+    private LocalDate dataDevolucao;
     private int diasEmprestimo;
-    private Usuario usuarioDaVez;
     private boolean disponivel;
     
+    
+    public Reserva(Usuario usuario, Livro livroReservado, Livro livro, LocalDate dataAtual, LocalDate dataReservaInicio, LocalDate dataReservaFim, LocalDate dataEmprestimo, LocalDate dataDevolucao, int diasEmprestimo, boolean disponivel) {
+        this.usuarioDaVez = usuario;
+        this.setLivroReservado(livro);
+        this.dataAtual = LocalDate.now();
+        this.dataReservaInicio = LocalDate.now();
+        this.dataReservaFim = dataReservaInicio.plusDays(diasEmprestimo);
+        this.diasEmprestimo = diasEmprestimo;
+        this.dataDevolucao = dataReservaInicio.plusDays(diasEmprestimo);
+        this.disponivel = false;
+    }
     
     public Livro getLivroReservado() {
 		return livroReservado;
 	}
 
-
 	public void setLivroReservado(Livro livroReservado) {
 		this.livroReservado = livroReservado;
 	}
-
-
-	public Reserva(Usuario usuario, Livro livro, int diasEmprestimo) {
-        this.usuarioDaVez = usuario;
-        this.setLivroReservado(livro);
-        this.diasEmprestimo = diasEmprestimo;
-        this.dataReservaInicio = LocalDate.now();
-        this.dataReservaFim = dataReservaInicio.plusDays(diasEmprestimo);
-        this.disponivel = false;
-        this.dataAtual = LocalDate.now();
-    }
-
     
 	public LocalDate getDataAtual(){
 	        return dataAtual;

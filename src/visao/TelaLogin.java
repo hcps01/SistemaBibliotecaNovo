@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TelaLogin {
+	
+	private JTextField campoUsuario;
+	private JTextField campoSenha;
+	private JButton botaoLogin;
 
     public TelaLogin() {
         // Criação da janela
@@ -24,7 +28,8 @@ public class TelaLogin {
         JPasswordField campoSenha = new JPasswordField(15);
 
         JButton botaoLogin = new JButton("Login");
-
+        
+       
         // Espaçamento entre os componentes
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -59,10 +64,16 @@ public class TelaLogin {
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        // Inicializa a tela de login
-        SwingUtilities.invokeLater(() -> new TelaLogin());
+    public JTextField getCampoUsuario() {
+    	return campoUsuario;
     }
+    
+    public JTextField getCampoSenha() {
+    	return campoSenha;
+    }
+    
+    public JButton getBotaoLogin() {
+    	return botaoLogin;
+    }
+        
 }
-
-
